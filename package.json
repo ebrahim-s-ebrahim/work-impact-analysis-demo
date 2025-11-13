@@ -6,7 +6,6 @@
     "collect": "node scripts/collect.js",
     "analyze": "node scripts/analyze.js",
     "full": "pnpm run collect -- --since=2025-06-01 && pnpm run analyze",
-    "setup": "node scripts/setup.js",
     "init-data": "node scripts/init-data.js",
     "list-models": "node scripts/list-models.js",
     "lint": "eslint \"src/**\""

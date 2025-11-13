@@ -25,10 +25,10 @@
 3. **Seed profile data**
 
    ```bash
-   pnpm run setup
+   pnpm run init-data
    ```
 
-   The setup script creates `.env` (if missing), scaffolds `data/profile.json`, and prepares an empty `data/work.json`.
+   This script creates scaffolds `data/profile.json`.
 
 4. **Collect and analyze**
 
@@ -43,8 +43,7 @@
 
 | Command                     | Purpose                                                                             |
 | --------------------------- | ----------------------------------------------------------------------------------- |
-| `pnpm run setup`            | Interactive bootstrap for `.env`, `data/profile.json`, and `data/work.json`.        |
-| `node scripts/init-data.js` | Non-interactive placeholder generator for profile/work JSON files.                  |
+| `node scripts/init-data.js` | Non-interactive placeholder generator for profile file.                            |
 | `pnpm run collect`          | Parse git commits for the configured author and save `data/work.json`.              |
 | `pnpm run analyze`          | Call Gemini with the simplified prompt and produce `reports/<timestamp>-impact.md`. |
 | `pnpm run list-models`      | Enumerate available Gemini models (requires `GEMINI_API_KEY`).                      |

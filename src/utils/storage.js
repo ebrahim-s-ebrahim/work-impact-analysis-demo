@@ -38,7 +38,7 @@ export const loadProfile = async () => {
     return JSON.parse(data);
   } catch (err) {
     if (err.code === "ENOENT") {
-      console.warn("⚠️  profile.json not found. Run: pnpm run setup");
+      console.warn("⚠️  profile.json not found. Run: pnpm run init-data and update it with your info.");
       return null;
     }
     if (err instanceof SyntaxError) {

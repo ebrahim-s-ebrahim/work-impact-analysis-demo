@@ -10,7 +10,6 @@ const DATA_DIR = path.join(__dirname, "..", "data");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 const profilePath = path.join(DATA_DIR, "profile.json");
-const workPath = path.join(DATA_DIR, "work.json");
 
 if (!fs.existsSync(profilePath)) {
   const profile = {
@@ -67,25 +66,6 @@ if (!fs.existsSync(profilePath)) {
   console.log("Created data/profile.json (fill in real details before analyzing)");
 } else {
   console.log("data/profile.json already exists");
-}
-
-if (!fs.existsSync(workPath)) {
-  const work = {
-    collectedAt: new Date().toISOString(),
-    period: { days: 30 },
-    commits: [],
-    summary: {
-      totalCommits: 0,
-      totalLinesAdded: 0,
-      totalLinesDeleted: 0,
-      totalLinesChanged: 0,
-      filesChanged: 0,
-    },
-  };
-  fs.writeFileSync(workPath, JSON.stringify(work, null, 2), "utf-8");
-  console.log("Created data/work.json (populate via `pnpm run collect`)");
-} else {
-  console.log("data/work.json already exists");
 }
 
 console.log("Init complete");
